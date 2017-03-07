@@ -26,10 +26,11 @@
   border-radius: 0.25rem;
   background-color: lightgrey;
   margin: 0rem;
-  margin-left: 1rem;	
+  margin-right: 1rem;
+  margin-top: 15rem;	
   transition: background-color 0.4s, box-shadow 0.1s;
   box-shadow: 0rem 0.1rem 0.25rem rgba(0, 0, 0, 0.5);
-  text-align: center;;
+  text-align: center;
 
 }
 
@@ -47,6 +48,22 @@
 .juu
 {
   padding-top: 3rem;
+}
+
+.arvostelu
+{
+  padding-left: 2rem;
+  background-color: lightgrey;
+  text-align: left;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0rem 0.4rem 0.7rem rgba(0, 0, 0, 0.5);
+}
+
+.arvostelu h3
+{
+  text-align: center;
 }
 
 </style>
@@ -135,22 +152,13 @@
 </ul>
 </li>
 </ul>
+
 </div>
 </header>
 
 <body>
   <div class="perkele">
-    <img src="http://upvan.in/wp-content/uploads/2015/09/bonsai-1.png" alt="puu">
-    <div id="menu">
-    <ul class="menu vertical medium-horizontal  medium-text-center" data-responsive-menu="drilldown medium-dropdown">
-    <li class="has-submenu"><a href="#">Jaa</a>
-    <ul class="submenu menu vertical" data-submenu>
-    <li><a href="#">Facebook</a></li>
-    <li><a href="#">Twitter</a></li>
-    <li><a href="#">Instagram</a></li>
-    </ul>
-    </li>
-    </div>
+    <img src="http://www.emilysplants.com/media/catalog/category/gp-junb41.png" alt="puu">
     <div class="linkkinappi">
            <a href="ruukku2.php">Arvostele</a>
      </div>
@@ -159,9 +167,10 @@
     <p>Bonsai istutetaan muutaman vuoden välein uudelleen, jolloin vaihdetaan multa (hiekansekainen), typistetään juuria noin kolmannes ja tarvittaessa istutetaan suurempaan bonsairuukkuun. Suurempaan ruukkuun istuttaminen on ajankohtaista, kun paakku on niin täynnä juuria että kastelu ei tunnu riittävän ja latvuksen ja juurten koko eivät ole enää tasapainossa. Myös latvusta typistetään leikkaamalla sekä ohjataan versoja rautalangoilla haluttuun suuntaan. Paras ajankohta suuremmalle leikkaamiselle on kevät juuri ennen kasvukauden alkua.</p>
     </div>
   </div>
-  <form class="">
-
-</form>
+  
+  <div class="arvostelu">
+  <h3>PALAUTE</h3>
+</div>
 <?php
 $nimi = $_POST["nimi"];
 $txt = $_POST["txt"];
@@ -213,6 +222,7 @@ while($t = $nayta -> fetch_object()){
 $my -> close();
 
 ?>
+</div>
 </body>
 
 <footer>
@@ -225,6 +235,7 @@ $my -> close();
 <div class="column"><img class="thumbnail" src="https://placehold.it/75" alt="image of space dog"></div>
 <div class="column"><img class="thumbnail" src="https://placehold.it/75" alt="image of space dog"></div>
 </ul>
+</div>
 </div>
 </div>
 </footer>
