@@ -159,6 +159,60 @@
     <p>Bonsai istutetaan muutaman vuoden välein uudelleen, jolloin vaihdetaan multa (hiekansekainen), typistetään juuria noin kolmannes ja tarvittaessa istutetaan suurempaan bonsairuukkuun. Suurempaan ruukkuun istuttaminen on ajankohtaista, kun paakku on niin täynnä juuria että kastelu ei tunnu riittävän ja latvuksen ja juurten koko eivät ole enää tasapainossa. Myös latvusta typistetään leikkaamalla sekä ohjataan versoja rautalangoilla haluttuun suuntaan. Paras ajankohta suuremmalle leikkaamiselle on kevät juuri ennen kasvukauden alkua.</p>
     </div>
   </div>
+  <form class="">
+
+</form>
+<?php
+$nimi = $_POST["nimi"];
+$txt = $_POST["txt"];
+$arvosana = $_POST["arvosana"];
+$send = $_POST["send"];
+
+include "settings.php";
+
+$sql = 'INSERT INTO 533V_verkkokauppa VALUES 
+(
+NULL,
+"'.$nimi.'",
+"'.$txt.'",
+"'.$arvosana.'",
+"'.$id.'"
+)';
+
+// arvostelun lisääminen
+if($send == "true"){
+  $my -> query($sql);
+}
+
+// Arvostelujen tulostaminen
+
+$sql2 = 'SELECT * FROM 533V_verkkokauppa WHERE tuotenumero = "'.$id.'"';
+$nayta = $my -> query($sql2);
+
+while($t = $nayta -> fetch_object()){
+    echo '
+        <div class="row arvostelu">
+         <div class="row">
+          <div class="medium-12 columns">
+        <p>'. $t -> user. '</p>
+    </div>
+</div>
+    <div class="row">
+        <div class="medium-12 columns">
+        <p>'. $t -> msg .'</p>
+    </div>
+</div>
+    <div class="row">
+    <div class="medium-12 columns">
+        <p>'. $t -> arvosana .'/10</p>
+    </div>
+ </div>
+</div>';
+}
+
+$my -> close();
+
+?>
 </body>
 
 <footer>
